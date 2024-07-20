@@ -1,0 +1,36 @@
+#headerlogin{
+    background-color: black;
+    color: white;
+    padding: 20px 280px;
+    width: 100%;
+}
+
+.links-header{
+    margin: 60px;
+    color: white;
+    text-decoration: none;
+}
+
+#titulo-header{
+    display: inline;
+}
+
+#div-principal{
+    margin: auto;
+    width: 700px;
+    padding-top: 20px;
+}
+#imagen-main{
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0px;
+}
+
+#titulo-imagen{
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 7px;
+}
+.links-header:hover{
+    text-decoration: underline;
+}

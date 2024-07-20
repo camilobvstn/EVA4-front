@@ -1,0 +1,24 @@
+
+#form-main{
+    margin: auto;
+    width: 700px;
+    box-shadow: 0 0 20px black;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+#btn-registrar{
+    margin-top: 20px;
+}
+
+.label-form{
+    margin-top: 20px;
+}
+.inputs-form{
+    width: 500px;
+
+}
+
+#select-form{
+    width: 500px;
+}
