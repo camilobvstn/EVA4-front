@@ -17,7 +17,7 @@ export const Registrar = () => {
   const [usuario, setUsuario] = useState<Usuario>(initialState);
   const [error, setError] = useState<{ [key: string]: string }>({});
   const [show, setShow] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false); // Estado para deshabilitar el botón
+  const [isSubmitting, setIsSubmitting] = useState(false); 
 
   const handleUsuario = (name: string, value: string) => {
     setUsuario({ ...usuario, [name]: value });
@@ -56,13 +56,13 @@ export const Registrar = () => {
 
   const registrar = () => {
     if (validar()) {
-      setIsSubmitting(true); // Deshabilitar el botón
+      setIsSubmitting(true); 
       registrarUsuario(usuario).then(() => {
         handleShow()
       }).catch((e) => {
         console.log(e);
         alert('Ocurrió un error al registrar');
-        setIsSubmitting(false); // Volver a habilitar el botón si ocurre un error
+        setIsSubmitting(false); 
       });
     }
   }
