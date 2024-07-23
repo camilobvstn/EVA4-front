@@ -1,18 +1,28 @@
+#body-main{
+    background-color: rgb(218, 218, 218);
+}
+#div-big{
+    background-color: white;
+    width: 1200px;
+    margin: auto;
+}
 #headerlogin{
     background-color: black;
     color: white;
-    padding: 20px 280px;
+    padding: 20px 290px;
+    padding-right: 1px;
     width: 100%;
 }
 
 .links-header{
-    margin: 60px;
+    margin: 80px;
     color: white;
     text-decoration: none;
 }
 
 #titulo-header{
     display: inline;
+    margin-right: 70px;
 }
 
 #div-principal{
@@ -33,4 +43,36 @@
 }
 .links-header:hover{
     text-decoration: underline;
+}
+
+.card-group{
+    width: 700px;
+    margin: auto;
+    margin-bottom: 70px;
+}
+#titulo-equipos{
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 7px;
+    margin-left: 410px;
+    margin-top: 20px;
+}
+#quit-header{
+    margin-left: 130px;
+}
+#salir-login{
+    margin-left: 0px;
+}
+#salir-login:hover{
+    color: rgb(247, 80, 80);
+}
+
+.partidos-prox{
+    width: 750px;
+    margin: auto;
+}
+#div-main-2{
+    margin: auto;
+    width: 700px;
+    padding-top: 20px;
 }

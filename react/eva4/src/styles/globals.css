@@ -25,3 +25,21 @@
 #bienvenido{
   text-align: left;
 }
+
+.links-header-indx{
+  margin-left: 500px;
+  color: white;
+}
+
+.img-social{
+  margin: 10px;
+}
+
+#ig-img{
+  margin-left: 850px;
+}
+
+.titulo-home{
+  text-decoration: none;
+  color: white;
+}

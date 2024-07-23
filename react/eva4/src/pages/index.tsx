@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
+import { SlSocialInstagram } from "react-icons/sl";
+import { SlSocialFacebook } from "react-icons/sl";
+import { SlSocialTwitter } from "react-icons/sl";
 
 const Home = () => {
   const [usuario, setUsuario] = useState("");
   const [contrasena, setContrasena] = useState("");
   const [errorUsuario, setErrorUsuario] = useState("");
   const [errorContrasena, setErrorContrasena] = useState("");
+  const [errorGeneral, setErrorGeneral] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const validar = () => {
     let valid = true;
@@ -25,15 +30,45 @@ const Home = () => {
       setErrorContrasena("");
     }
 
+    if (valid && (usuario !== "admin" || contrasena !== "admin")) {
+      setErrorGeneral("Usuario o contraseña incorrectos.");
+      valid = false;
+    } else {
+      setErrorGeneral("");
+    }
+
     return valid;
+  };
+
+  const iniciarSesion = () => {
+    if (validar()) {
+      setIsAuthenticated(true);
+      window.location.href = "./Login";
+    }
+  };
+
+  const cerrarSesion = () => {
+    setIsAuthenticated(false);
+    window.location.href = "./"; 
   };
 
   return (
     <>
+      <header id='headerlogin'>
+        <h1 id='titulo-header'>PAGINAFUT</h1>
+        <SlSocialInstagram className="img-social" id="ig-img" size={"2em"} />
+        <SlSocialFacebook className="img-social" id="fb-img" size={"2em"} />
+        <SlSocialTwitter className="img-social" id="tw-img" size={"2em"} />
+        {isAuthenticated && (
+          <Button variant="link" onClick={cerrarSesion} style={{ color: "white" }}>
+            Salir
+          </Button>
+        )}
+      </header>
       <div id="main1">
         <h1 id="titulo">Iniciar Sesión</h1>
         <p id="bienvenido">
-          Bienvenido a OpinionesFUT! 
+          Bienvenido a OpinionesFUT!
           <br />Rellena el formulario para iniciar sesión
         </p>
         <FloatingLabel
@@ -54,9 +89,13 @@ const Home = () => {
         </FloatingLabel>
         
         <FloatingLabel 
-          controlId="floatingPassword" label="Password"className="inputs"
+          controlId="floatingPassword" 
+          label="Password" 
+          className="inputs"
         >
-          <Form.Control type="password"placeholder="Password" 
+          <Form.Control 
+            type="password" 
+            placeholder="Password" 
             value={contrasena}
             onChange={(e) => setContrasena(e.target.value)}
             isInvalid={!!errorContrasena}
@@ -66,11 +105,16 @@ const Home = () => {
           </Form.Control.Feedback>
         </FloatingLabel>
 
-        <Button id="iniciar" variant="dark" onClick={(e) => {
-            if (validar()) {
-              window.location.href = "./Login"; //window.location es para cambiar la pestana en la q se encuentra el usuario
-            }
-          }}
+        {errorGeneral && (
+          <div style={{ color: "red", marginBottom: "10px" }}>
+            {errorGeneral}
+          </div>
+        )}
+
+        <Button 
+          id="iniciar" 
+          variant="dark" 
+          onClick={iniciarSesion}
         >
           Iniciar Sesión
         </Button>
