@@ -11,9 +11,9 @@ const Login = () => {
       <div id='body-main'>
       <header id='headerlogin'>
             <h1 id='titulo-header'>PAGINAFUT</h1>
-            <Link href={"./Registrar"} className='links-header'>REGISTRAR</Link>
-            <Link href={"./Tabla"} className='links-header'>TABLA DE USUARIOS</Link>
-            <Link href={"./Componentes/Prueba"} className='links-header'>NOTICIAS</Link>
+            <Link href={"./Registrar"} className='links-header'>REGISTRAR USUARIOS</Link>
+            <Link href={"./Comentarios"} className='links-header'>COMENTAR</Link>
+            <Link href={"./Tabla"} className='links-header'>VER COMENTARIOS</Link>
             <ImExit id='quit-header' size={"30px"}/>
             <Link href={"./index"} className='links-header' id='salir-login'>SALIR</Link>
         </header>

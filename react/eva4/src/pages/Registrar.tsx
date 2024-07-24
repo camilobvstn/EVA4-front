@@ -73,7 +73,10 @@ export const Registrar = () => {
   const aregistrar = () => {
     window.location.href = "./Registrar"
   }
-
+  const atabla = () => {
+    window.location.href = "./Tabla";
+  }
+  
   return (
     <>
       <div id='body-main-form'>

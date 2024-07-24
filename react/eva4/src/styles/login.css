@@ -1,5 +1,6 @@
 #body-main{
-    background-color: rgb(218, 218, 218);
+    background-image: url(/images/estadio.jpeg);
+    height: 1840px;
 }
 #div-big{
     background-color: white;
@@ -46,8 +47,6 @@
 }
 
 .card-group{
-    width: 700px;
-    margin: auto;
     margin-bottom: 70px;
 }
 #titulo-equipos{

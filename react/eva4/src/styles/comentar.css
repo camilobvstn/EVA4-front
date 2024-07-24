@@ -1,0 +1,62 @@
+#body-main-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #div-big-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 89vh;
+    padding: 20px;
+  }
+  
+  .form-image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .fondo-form {
+    width: 50%;
+    box-shadow: 0 0 200px black;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  #form-main {
+    width: 50%;
+    background: white; 
+    padding: 20px; 
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  
+  .inputs-form {
+    margin-bottom: 15px;
+  }
+  
+  #titulo-header {
+    text-align: center;
+  }
+  
+  .img-social {
+    margin-left: 10px;
+  }
+  
+  .titulo-home {
+    text-decoration: none;
+  }
+  
+  #body-main-form{
+    background-image: url(/images/estadio.jpeg);
+    height: 48vw;
+  }

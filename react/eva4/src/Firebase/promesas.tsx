@@ -1,57 +1,62 @@
 import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from './firebase'
 import { Usuario } from "@/interfaces/iUsuarios";
+import { Comentario } from "@/interfaces/iOpinion";
 
 export const registrarUsuario =async(usuarios:Usuario)=>{
      const docRef= await addDoc(collection(db,'usuarios'), usuarios)
     }
 
-export const obtenerUsuarios = async()=>{
-    let usuarios:Usuario[] = []
-    const querySnapshot = await getDocs(collection(db, 'usuarios'));
+export const obtenerComentarios = async()=>{
+    let comentarios:Comentario[] = []
+    const querySnapshot = await getDocs(collection(db, 'comentarios'));
     querySnapshot.forEach((doc)=>{
-        let usuario:Usuario={
-            nombre:doc.data().nombre,
-            apellido:doc.data().apellido,
+        let comentario:Comentario={
             usuario:doc.data().usuario,
-            equipofav:doc.data().equipofav,
+            partido:doc.data().partido,
+            pais:doc.data().pais,
+            comentario:doc.data().comentario,
             key:doc.id
         }
-        usuarios.push(usuario)
+        comentarios.push(comentario)
     })
-    return usuarios
+    return comentarios
 }
 
-export const obtenerUsuario= async(key:string)=>{
-    const docRef = doc(db, "usuarios", key);
+export const obtenerComentario= async(key:string)=>{
+    const docRef = doc(db, "comentarios", key);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        let usuario:Usuario={
-            nombre:docSnap.data().nombre,
-            apellido:docSnap.data().apellido,
+        let comentario:Comentario={
             usuario:docSnap.data().usuario,
-            equipofav:docSnap.data().equipofav,
+            partido:docSnap.data().partido,
+            pais:docSnap.data().pais,
+            comentario:docSnap.data().comentario,
             key:docSnap.id
         };
-     return usuario
+     return comentario
     } else {
         return undefined
     }
 }
-export const actualizarUsuario = async (id: string, usuario: Usuario) => {
-    const usuarioRef = doc(db, 'usuarios', id);
+export const actualizarComentario = async (id: string, comentario: Comentario) => {
+    const usuarioRef = doc(db, 'comentarios', id);
     await updateDoc(usuarioRef, {
-      nombre: usuario.nombre,
-      apellido: usuario.apellido,
-      usuario: usuario.usuario,
-      equipofav: usuario.equipofav,
-      key:usuario.key
+      usuario: comentario.usuario,
+      partido: comentario.partido,
+      pais: comentario.pais,
+      comentario: comentario.comentario,
+      key:comentario.key
     });
 
 }
 
-export const eliminarUsuario = async(key:string) =>{
-    const ref = doc(db,"usuarios",key);
+export const eliminarComentario = async(key:string) =>{
+    const ref = doc(db,"comentarios",key);
     await deleteDoc (ref);
 }
+
+export const registrarComentario =async(comentarios:Comentario)=>{
+    const docRef= await addDoc(collection(db,'comentarios'), comentarios)
+   }

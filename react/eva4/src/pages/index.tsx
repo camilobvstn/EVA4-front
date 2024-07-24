@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import { Button, FloatingLabel, Form } from "react-bootstrap";
+import { Button, Col, Container, FloatingLabel, Form, Image, Row } from "react-bootstrap";
 import { SlSocialInstagram } from "react-icons/sl";
 import { SlSocialFacebook } from "react-icons/sl";
 import { SlSocialTwitter } from "react-icons/sl";
@@ -54,6 +54,7 @@ const Home = () => {
 
   return (
     <>
+    
       <header id='headerlogin'>
         <h1 id='titulo-header'>PAGINAFUT</h1>
         <SlSocialInstagram className="img-social" id="ig-img" size={"2em"} />
@@ -65,7 +66,13 @@ const Home = () => {
           </Button>
         )}
       </header>
-      <div id="main1">
+
+
+      <div id="main-index">
+        <div id="imagen-index">
+      </div>
+        <div id="main1">
+      
         <h1 id="titulo">Iniciar Sesión</h1>
         <p id="bienvenido">
           Bienvenido a OpinionesFUT!
@@ -118,7 +125,13 @@ const Home = () => {
         >
           Iniciar Sesión
         </Button>
+ 
       </div>
+
+      <Image src="/images/ligas.png" alt="backgorund-image" className="fondo-index" style={{ borderRadius:"10px", backgroundColor:"rgba(0, 0, 0, 0.4)"}}></Image>
+
+      </div>
+  
     </>
   );
 };

@@ -8,6 +8,8 @@
   margin: auto;
   margin-top: 40px;
   padding-bottom: 100px;
+  float: right;
+  margin-right: 320px;
 }
 #iniciar{
   width: 500px;
@@ -43,3 +45,20 @@
   text-decoration: none;
   color: white;
 }
+
+#main-index{
+  background-image: url(/images/estadio.jpeg);
+  height: 808px;
+}
+.fondo-index{
+  height: 700px;
+  margin-left: 200px;
+  margin-top: 50px;
+}
+.fondo2-index{
+  display: inline;
+  position:fixed;
+  opacity: .6;
+  background-color: rgba(0, 0, 0, 0.027);
+}
+
